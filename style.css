@@ -28,9 +28,8 @@
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: gray; 
+    background: rgb(63, 63, 63); 
     border-radius: 10px;
-    box-shadow: inset 0 0 5px rgb(73, 73, 73); 
   }
   
   /* Handle on hover */
@@ -50,6 +49,10 @@ body{
     color: white;
 }
 nav{
+    z-index: 99;
+    background-color: black !important;
+    position: fixed !important;
+    width: 100%;
     padding: 20px 0 !important;
 }
 .logo{
@@ -68,6 +71,7 @@ nav{
 }
 .hero{
     width: 100%;
+    margin-top: 120px;
 }
 .hero button{
     font-size: 14px;
@@ -166,4 +170,83 @@ p{
     box-shadow: none;
     color: white;
 
+}
+
+
+/* ---------------------------------------------------------    about   ----------------------------------------------------------- */
+
+.about, .testimonial{
+    width: 70%;
+}
+
+/* --------------------------------------------------        testimonial     ----------------------------------------------------------------- */
+
+.testimonial h2{
+    font-family: cardo;
+    letter-spacing: 2px;
+}
+.testimonial h6::after{
+    content: "";
+    width: 10%;
+    height: 1px;
+    display: inline-block;
+    background-color: #27a776;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.testimonial .bg-secondary, .service .bg-secondary{
+    background-color: #161718 !important;
+    
+}
+
+.card-left, .card-right{
+    transform: scale(90%);
+    opacity: 60%;
+}
+
+/* --------------------------------------------------        services     ----------------------------------------------------------------- */
+.service-ico{
+    height: 60px;
+    width: 60px;
+}
+.service{
+    width: 70%;
+}
+.service p{
+    font-size: 14px;
+    line-height: 1.8;
+}
+.card-service{
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+.card-service::before{
+    content: "";
+    position: absolute;
+    background: #27a776;
+    top: -100%;
+    left: 0;
+    right: 0;
+    transition: all 0.3s;
+    z-index: -1;    
+    width: 100%;
+    height: 100%;
+    transition: .5s;  
+}
+.card-service:hover::before{   
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.card-service:hover i{   
+    color: #27a776 !important;
+}
+.card-service:hover .service-ico{   
+     background-color: white !important;
+}
+
+.price-container{
+    border-bottom: 1px dashed gray;
 }
